@@ -94,11 +94,12 @@ listint_t *insertNode(listint_t **head, listint_t *new, int order)
 		}
 		if (nptr == NULL)
 			aft = NULL;
-
 		new->next = aft;
-		b4->next = new;
+		if (b4 == *head)
+			*head = new;
+		else
+			b4->next = new;
 	}
-
 	return (new);
 }
 
