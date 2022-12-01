@@ -14,16 +14,15 @@ if __name__ == '__main__':
     a = int(argv[1])
     b = int(argv[3])
     op = argv[2]
-    match op:
-        case "+":
-            c = a + b
-            print("{} + {} = {}".format(a, b, c))
-        case "-":
-            c = a - b
-            print("{} - {} = {}".format(a, b, c))
-        case "*":
-            c = a * b
-            print("{} * {} = {}".format(a, b, c))
-        case "/":
-            c = a / b
-            print("{} / {} = {}".format(a, b, c))
+    if op == "+":
+        c = a + b
+        print("{:d} + {:d} = {:d}".format(a, b, c))
+    elif op == "-":
+        c = a - b
+        print("{:d} - {:d} = {:d}".format(a, b, c))
+    elif op == "/":
+        c = a / b
+        print("{:d} / {:d} = {:f}".format(a, b, c))
+    else:
+        c = a * b
+        print("{:d} * {:d} = {:d}".format(a, b, c))
