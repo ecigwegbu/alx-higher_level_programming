@@ -7,7 +7,7 @@ if __name__ == '__main__':
         print(f"Usage: ./100-my_calculator.py <a> <operator> <b>")
         exit(1)
     elif not (r"+-*/".__contains__(argv[2])):
-        print(f"Unknown operator. Available operators: +, -, * and ")
+        print(f"Unknown operator. Available operators: +, -, * and /")
         exit(1)
 
     from calculator_1 import add, sub, mul, div
