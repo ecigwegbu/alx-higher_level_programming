@@ -20,6 +20,6 @@ if __name__ == '__main__':
     elif op == "-":
         c = a - b
         print("{:d} - {:d} = {:d}".format(a, b, c))
-    elif op == "*":
-        c = a * b
-        print("{:d} * {:d} = {:d}".format(a, b, c))
+    elif op == "/":
+        c = a / b
+        print("{:d} / {:d} = {:d}".format(a, b, c))
