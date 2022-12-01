@@ -16,9 +16,9 @@ if __name__ == '__main__':
     op = argv[2]
     match op:
         case "+":
-            print(f"{a:d} + {b:d} = {a + b:d}")
+            print(f"{a} + {b} = {a + b}")
         case "-":
-            print(f"{a:d} - {b:d} = {a - b:d}")
+            print(f"{a} - {b} = {a - b}")
         case "*":
             print(f"{a} * {b} = {a * b}")
         case "/":
