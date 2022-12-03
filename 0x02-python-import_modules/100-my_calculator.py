@@ -24,5 +24,5 @@ if __name__ == '__main__':
         c = a * b
         print("{:d} * {:d} = {:d}".format(a, b, c))
     elif op == "/":
-        c = a // b
+        c = int(a / b)
         print("{:d} / {:d} = {:d}".format(a, b, c))
