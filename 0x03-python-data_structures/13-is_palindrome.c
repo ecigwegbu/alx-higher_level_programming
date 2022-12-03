@@ -10,7 +10,7 @@ int get_len(listint_t **head);
  */
 int is_palindrome(listint_t **head)
 {
-	int len = 0, i, stop_at = 0;
+	int len = 0, i, i_mirror, stop_at = 0;
 
 	/* check if pointer is NULL or list is empty*/
 	if (head == NULL || *head == NULL)
@@ -22,10 +22,11 @@ int is_palindrome(listint_t **head)
 	len = get_len(head);
 
 	/* check each noode and it's mirror */
-	stop_at = (len % 2) - 1;
+	stop_at = (len / 2) - 1;
 	for (i = 0; i <= stop_at; i++)
 	{
-		if (get_item(head, i) != get_item(head, len - i - 1))
+		i_mirror = len - (i + 1);
+		if (get_item(head, i) != get_item(head, i_mirror))
 		return (0); /* not a palindrome */
 	}
 
@@ -50,7 +51,7 @@ int get_item(listint_t **head, int idx)
 			perror("get_item");
 			exit(EXIT_FAILURE);
 		}
-		ptr++;
+		ptr = ptr->next;
 	}
 
 	return (ptr->n);
@@ -67,9 +68,9 @@ int get_len(listint_t **head)
 	listint_t *ptr = *head;
 	int pos = 0;
 
-	while (ptr != NULL)
+	while (ptr)  /* if you reach NULL that is the end of the list */
 	{
-		ptr++;
+		ptr = ptr->next;
 		pos++;
 	}
 
