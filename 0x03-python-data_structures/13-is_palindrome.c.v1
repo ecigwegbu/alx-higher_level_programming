@@ -1,6 +1,7 @@
 #include "lists.h"
 
 int check_item(listint_t **head, int idx, int idx_mirror);
+int get_item(listint_t **head, int idx);
 int get_len(listint_t **head);
 
 /**
@@ -26,6 +27,7 @@ int is_palindrome(listint_t **head)
 	for (i = 0; i <= stop_at; i++)
 	{
 		i_mirror = len - (i + 1);
+		/*if (get_item(head, i) != get_item(head, i_mirror)) */
 
 		/* compare i and i_mirror in one step --debug */
 		if (!check_item(head, i, i_mirror))
@@ -64,6 +66,31 @@ int check_item(listint_t **head, int idx, int idx_mirror)
 
 	return (n1 == n2 ? 1 : 0);
 }
+
+/**
+ * get_item - get item in a singly linked list at a given index position
+ * @head: address of the pointer to the head of the linked list
+ * @idx: index position, 0-based
+ * Return: value at given index
+ */
+int get_item(listint_t **head, int idx)
+{
+	listint_t *ptr = *head;
+	int pos;
+
+	for (pos = 0; pos < idx; pos++)
+	{
+		if (ptr == NULL)
+		{
+			perror("get_item");
+			exit(EXIT_FAILURE);
+		}
+		ptr = ptr->next;
+	}
+
+	return (ptr->n);
+}
+
 
 /**
  * get_len - get length of singly linked list
