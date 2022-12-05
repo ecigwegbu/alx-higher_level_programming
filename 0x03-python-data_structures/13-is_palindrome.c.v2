@@ -1,7 +1,8 @@
 #include "lists.h"
+#define BUFFSIZE 1024
 
 int check_item(listint_t **head, int idx, int idx_mirror);
-int get_len(listint_t **head);
+size_t build_array(listint_t **head, int *array);
 
 /**
  * is_palindrome - check if a singly linked list is s palindrome
@@ -11,6 +12,7 @@ int get_len(listint_t **head);
 int is_palindrome(listint_t **head)
 {
 	int len = 0, i, i_mirror, stop_at = 0;
+	int array[BUFFSIZE];
 
 	/* check if pointer is NULL or list is empty*/
 	if (head == NULL || *head == NULL)
@@ -18,8 +20,8 @@ int is_palindrome(listint_t **head)
 	return (1);
 	}
 
-	/* determine list length : len*/
-	len = get_len(head);
+	/* build array and return the length len*/
+	len = build_array(head, array);
 
 	/* check each noode and it's mirror */
 	stop_at = (len / 2) - 1;
@@ -28,8 +30,8 @@ int is_palindrome(listint_t **head)
 		i_mirror = len - (i + 1);
 
 		/* compare i and i_mirror in one step --debug */
-		if (!check_item(head, i, i_mirror))
-		return (0); /* not a palindrome */
+		if (array[i] != array[i_mirror])
+			return (0); /* not a palindrome */
 	}
 
 	return (1);
@@ -66,17 +68,20 @@ int check_item(listint_t **head, int idx, int idx_mirror)
 }
 
 /**
- * get_len - get length of singly linked list
+ * build_array - build array of elements and return the length len
  * @head: address of the pointer to the head of the linked list
+ * @array: array of list elements
  * Return: length of list, 0 - based
  */
-int get_len(listint_t **head)
+size_t build_array(listint_t **head, int *array)
 {
 	listint_t *ptr = *head;
-	int pos = 0;
+	size_t pos = 0;
 
 	while (ptr)  /* if you reach NULL that is the end of the list */
 	{
+		/* *array[pos] = ptr->n;  debug */
+		array[pos] = ptr->n;
 		ptr = ptr->next;
 		pos++;
 	}
