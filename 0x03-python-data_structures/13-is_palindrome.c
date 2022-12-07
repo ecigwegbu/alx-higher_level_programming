@@ -21,23 +21,24 @@ int is_palindrome(listint_t **head)
 	{
 	return (1);
 	}
-
 	/* build array and return the length len*/
 	len = build_array(head, &array);
 
+	if (len == 1)
+	{	free(array);
+		return (1);
+	}
 	/* compare totals for not a palindrome case */
 	if (comp_lhs_rhs_totals(array, len))
 	{
 		free(array);
 		return (0);
 	}
-
 	/* check each noode and it's mirror */
 	stop_at = (len / 2) - 1;
 	for (i = 0; i <= stop_at; i++)
 	{
 		i_mirror = len - (i + 1);
-
 		/* compare i and i_mirror */
 		if (array[i] != array[i_mirror])
 		{
@@ -45,7 +46,6 @@ int is_palindrome(listint_t **head)
 			return (0); /* not a palindrome */
 		}
 	}
-
 	free(array);
 	return (1);
 }
