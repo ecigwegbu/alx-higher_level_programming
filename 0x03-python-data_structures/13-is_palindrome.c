@@ -1,5 +1,5 @@
 #include "lists.h"
-#define BUFFSIZE 1024
+#define BUFFSIZE 10
 
 int check_item(listint_t **head, int idx, int idx_mirror);
 size_t build_array(listint_t **head, int **ap);
