@@ -78,3 +78,13 @@ class Rectangle:
             if i != self.__height - 1:
                 __str = __str + "\n"
         return __str
+
+    def __repr__(self):
+        """ return the repr of the rectangle """
+
+        return "Rectangle(" + str(self.__width) + ", "\
+            + str(self.__height) + ")"
+
+    def __del__(self):
+        print("Bye rectangle...")
+        return
