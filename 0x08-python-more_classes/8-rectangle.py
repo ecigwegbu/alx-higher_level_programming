@@ -3,7 +3,10 @@
 
 
 class Rectangle:
-    """ Rectangle Class Based on 2-Rectangle"""
+    """ Rectangle Class Based on 7-Rectangle"""
+
+    number_of_instances = 0
+    print_symbol = "#"
 
     def __init__(self, width=0, height=0):
         """ Constructor """
@@ -18,6 +21,7 @@ class Rectangle:
             raise ValueError("height must be >= 0")
         self.__width = width
         self.__height = height
+        Rectangle.number_of_instances = Rectangle.number_of_instances + 1
 
     @property
     def width(self):
@@ -74,7 +78,33 @@ class Rectangle:
         __str = ""
         for i in range(self.__height):
             for j in range(self.__width):
-                __str = __str + "#"
+                __str = __str + str(self.print_symbol)
             if i != self.__height - 1:
                 __str = __str + "\n"
         return __str
+
+    def __repr__(self):
+        """ return the repr of the rectangle """
+
+        return "Rectangle(" + str(self.__width) + ", "\
+            + str(self.__height) + ")"
+
+    def __del__(self):
+        """destructor """
+
+        print("Bye rectangle...")
+        Rectangle.number_of_instances = Rectangle.number_of_instances - 1
+        return
+
+    @staticmethod
+    def bigger_or_equal(rect_1, rect_2):
+        """ compare rectangles """
+
+        if type(rect_1) != Rectangle:
+            raise TypeError("rect_1 must be an instance of Rectangle")
+        if type(rect_1) != Rectangle:
+            raise TypeError("rect_1 must be an instance of Rectangle")
+        if rect_1.area >= rect_2.area:
+            return rect_1
+        else:
+            return rect_2
