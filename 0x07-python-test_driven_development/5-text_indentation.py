@@ -22,7 +22,7 @@ def text_indentation(text):
     newline = True
     for char in text:
         if char == " ":
-            if newline == True:
+            if newline is True:
                 continue
         print(char, sep="", end="")
         newline = False
