@@ -29,6 +29,6 @@ def text_indentation(text):
                 print(char, sep="", end="")
                 if char == "." or char == "?" or char == ":":
                     print("\n")
-                newline == True
+                newline = True
 
     return
