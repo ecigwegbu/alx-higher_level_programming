@@ -1,28 +1,34 @@
 #!/usr/bin/python3
-""" This module is for a function that
-adds two numbers a and b
-Prototype: def add_integer(a, b=98):
-a and b must be integers or floats, otherwise raise
-a TypeError exception with the message a must be an
-integer or b must be an integer
-a and b must be first casted to integers if they are float
-Returns an integer: the addition of a and b
+"""
+Write a function that prints a text with 2 new lines after each of
+these characters: ., ? and :
+
+Prototype: def text_indentation(text):
+text must be a string, otherwise raise a TypeError exception with
+the message text must be a string
+There should be no space at the beginning or at the end of each
+printed line
 You are not allowed to import any module
 """
 
 
-def add_integer(a, b=98):
-    """ This function adds two numbers
-    and returns their sum.
-    The numbers must be integers
+def text_indentation(text):
+    """ This function prints text and leaves new lines.
+    No space at the beginning and end of each line.
     """
 
-    if type(a) != int and type(a) != float:
-        raise TypeError("a must be an integer")
-    if type(b) != int and type(b) != float:
-        raise TypeError("b must be an integer")
-    if type(a) == float:
-        a = int(a)
-    if type(b) == float:
-        b = int(b)
-    return (a + b)
+    if text is None or type(text) != str:
+        raise TypeError("text must be a string")
+    newline = True
+    for char in text:
+        if newline is True:
+            if char == " ":
+                continue
+            else:
+                newline = False
+                print(char, sep="", end="")
+                if char == "." or char == "?" or char == ":":
+                    print("\n")
+                newline == True
+
+    return
