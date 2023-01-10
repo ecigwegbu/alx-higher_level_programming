@@ -13,6 +13,7 @@ def read_file(filename=""):
         return
 
     with open(filename, 'r') as myfile:
-        print(myfile.read(), end="")
+        for line in myfile:
+            print(line, end="")
 
     return
