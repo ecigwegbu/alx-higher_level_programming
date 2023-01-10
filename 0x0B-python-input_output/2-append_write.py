@@ -3,6 +3,7 @@
 that appends data to a file and
 """
 
+
 def append_write(filename="", text=""):
     """ This function appends data to a file.
     """
@@ -11,4 +12,4 @@ def append_write(filename="", text=""):
         return
 
     with open(filename, 'a') as f:
-            return f.write(text)
+        return f.write(text)

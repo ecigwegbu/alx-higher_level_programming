@@ -3,6 +3,7 @@
 That writes data to a file and
 """
 
+
 def write_file(filename="", text=""):
     """ This function writes data to a file.
     """
@@ -11,4 +12,4 @@ def write_file(filename="", text=""):
         return
 
     with open(filename, 'w') as f:
-            return f.write(text)
+        return f.write(text)
