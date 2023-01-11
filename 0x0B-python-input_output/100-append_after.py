@@ -11,7 +11,7 @@ def append_after(filename="", search_string="", new_string=""):
     if filename is None or search_string is None:
         return
     lines = []
-    with open(filename, "r+") as f:
+    with open(filename, "r") as f:
         lines = f.readlines()
         for i in range(len(lines)):
             if search_string in lines[i]:
