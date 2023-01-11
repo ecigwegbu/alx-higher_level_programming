@@ -6,7 +6,7 @@ appends a line after a given line"""
 def append_after(filename="", search_string="", new_string=""):
     """ Append a line after a line containing a given string """
 
-    if search_string == "":
+    if filename == "" or search_string == "":
         return
     lines = []
     with open(filename, "r+") as f:
@@ -14,6 +14,6 @@ def append_after(filename="", search_string="", new_string=""):
         for i in range(len(lines)):
             if search_string in lines[i]:
                 lines.insert(i + 1, new_string)
-    with open(filename, "w") as f:
-        f.writelines(lines)
+    with open(filename, "w") as f2:
+        f2.writelines(lines)
     return
