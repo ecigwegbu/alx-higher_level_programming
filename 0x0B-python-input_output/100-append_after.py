@@ -8,6 +8,8 @@ def append_after(filename="", search_string="", new_string=""):
 
     if filename == "" or search_string == "":
         return
+    if filename is None or search_string is None:
+        return
     lines = []
     with open(filename, "r+") as f:
         lines = f.readlines()
