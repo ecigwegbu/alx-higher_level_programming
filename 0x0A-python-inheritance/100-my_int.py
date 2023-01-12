@@ -9,7 +9,7 @@ class MyInt(int):
     def __eq__(self, obj):
         """ reverse == operator"""
 
-        return True
+        return False
 
     def __ne__(self, obj):
         """ reverse != operator"""
