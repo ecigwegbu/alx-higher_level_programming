@@ -10,6 +10,9 @@ Exception: area() is not implemented
 >>> mygeo.integer_validator("score", -1)
 Traceback (most recent call last):
 ValueError: score must be greater than 0
+>>> mygeo.integer_validator("score", 0)
+Traceback (most recent call last):
+ValueError: score must be greater than 0
 >>> mygeo.integer_validator("score", 23.2)
 Traceback (most recent call last):
 TypeError: score must be an integer
@@ -22,3 +25,11 @@ TypeError: width must be an integer
 >>> mygeo.integer_validator("score", "23.2")
 Traceback (most recent call last):
 TypeError: score must be an integer
+>>> mygeo.integer_validator("score", [0, 1, 2, 3])
+Traceback (most recent call last):
+TypeError: score must be an integer
+>>> mygeo.integer_validator("score", [[2], [3]])
+Traceback (most recent call last):
+TypeError: score must be an integer
+>>> mygeo.integer_validator("score", int(5))
+>>> mygeo.integer_validator("score", 23.5//3)
