@@ -1,12 +1,15 @@
 #!/usr/bin/python3
-""" This module contains a function that
-Checks if an object is an instance of a class"""
+""" This module contains a function that adds
+an attribute to an object if possible.
+"""
 
 
-def is_same_class(obj, a_class):
-    """ Check if object is an instance of a class """
+def add_attribute(obj, attribute, value):
+    """ Add an attribute if possible """
 
-    if isinstance(obj, a_class):
-        return True
+    if hasattr(obj, "__dict__") or\
+            hasattr(obj, "__slot__") and attribute in obj.__slot__:
+        obj.__setattr__(attribute, value)
     else:
-        return False
+        raise TypeError("can't add new attribute")
+    return
