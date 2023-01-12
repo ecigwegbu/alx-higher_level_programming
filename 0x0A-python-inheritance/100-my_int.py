@@ -9,9 +9,9 @@ class MyInt(int):
     def __eq__(self, obj):
         """ reverse == operator"""
 
-        return False
+        return (self is obj)
 
     def __ne__(self, obj):
         """ reverse != operator"""
 
-        return False
+        return not(self is obj)
