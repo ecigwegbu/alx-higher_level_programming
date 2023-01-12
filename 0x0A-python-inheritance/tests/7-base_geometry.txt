@@ -1,0 +1,24 @@
+#!/usr/bin/python3
+
+>>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+
+>>> mygeo = BaseGeometry()
+>>> mygeo.area()
+Traceback (most recent call last):
+Exception: area() is not implemented
+>>> mygeo.integer_validator("score", 1)
+>>> mygeo.integer_validator("score", -1)
+Traceback (most recent call last):
+ValueError: score must be greater than 0
+>>> mygeo.integer_validator("score", 23.2)
+Traceback (most recent call last):
+TypeError: score must be an integer
+>>> mygeo.integer_validator("score", [])
+Traceback (most recent call last):
+TypeError: score must be an integer
+>>> mygeo.integer_validator("width", float('NaN'))
+Traceback (most recent call last):
+TypeError: width must be an integer
+>>> mygeo.integer_validator("score", "23.2")
+Traceback (most recent call last):
+TypeError: score must be an integer
