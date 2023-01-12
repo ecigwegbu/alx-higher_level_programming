@@ -1,12 +1,17 @@
 #!/usr/bin/python3
-""" This module contains a function that
-Checks if an object is an instance of a class"""
+""" This module defines a modified int class with
+modified operators"""
 
 
-def is_same_class(obj, a_class):
-    """ Check if object is an instance of a class """
+class MyInt(int):
+    """ over-ride gt and ne operators: """
 
-    if isinstance(obj, a_class):
+    def __eq__(self, obj):
+        """ reverse == operator"""
+
         return True
-    else:
-        return False
+
+    def __ne__(self, obj):
+        """ reverse != operator"""
+
+        return True
