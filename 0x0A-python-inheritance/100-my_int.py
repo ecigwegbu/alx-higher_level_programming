@@ -14,4 +14,4 @@ class MyInt(int):
     def __ne__(self, obj):
         """ reverse != operator"""
 
-        return True
+        return False
