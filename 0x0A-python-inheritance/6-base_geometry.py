@@ -1,12 +1,11 @@
 #!/usr/bin/python3
-""" This module contains a function that
-Checks if an object is an instance of a class"""
+""" This module inherits from Basegeometry empty class
+"""
 
 
-def is_same_class(obj, a_class):
-    """ Check if object is an instance of a class """
+class BaseGeometry:
+    """ Inherit from Empty class """
 
-    if isinstance(obj, a_class):
-        return True
-    else:
-        return False
+    def area(self):
+        raise Exception("area() is not implemented")
+        return
