@@ -1,12 +1,23 @@
 #!/usr/bin/python3
-""" This module contains a function that
-Checks if an object is an instance of a class"""
+""" This module improves Basegeometry class
+"""
 
 
-def is_same_class(obj, a_class):
-    """ Check if object is an instance of a class """
+class BaseGeometry:
+    """ Inherit improves another class """
 
-    if isinstance(obj, a_class):
-        return True
-    else:
-        return False
+    def area(self):
+        """ not yet implemented"""
+
+        raise Exception("area() is not implemented")
+        return
+
+    def integer_validator(self, name, value):
+        """ validate function """
+
+        if type(value) != int:
+            raise TypeError(name + " must be an integer")
+        if value <= 0:
+            raise ValueError(name + " must be greater than 0")
+
+        return
