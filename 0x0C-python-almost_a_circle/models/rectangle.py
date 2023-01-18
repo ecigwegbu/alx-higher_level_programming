@@ -119,14 +119,6 @@ class Rectangle(Base):
         return f"[Rectangle] ({self.id}) {self.__x}\
 /{self.__y} - {self.__width}/{self.__height}"
 
-    def update0(self, *args):
-        """ assign an argument to each attribute """
-
-        attrs = ("id", "width", "height", "x", "y")
-        for at, arg in zip(attrs, args):
-            self.__setattr__(at, arg)
-        return
-
     def update(self, *args, **kwargs):
         """ assign an argument to each attribute """
 
