@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 """ Test module for the almost a circle project """
 import unittest
-from models.base import Base
 from models.rectangle import Rectangle
 
 
