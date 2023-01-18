@@ -18,17 +18,3 @@ class Square(Rectangle):
         """ return the string version of the Square """
         return f"[Square] ({self.id}) {self.x}\
 /{self.y} - {self.width}"
-
-    @property
-    def size(self):
-        """ size propert getter """
-
-        return self.width
-
-    @size.setter
-    def size(self, size):
-        """ size property setter """
-
-        self.integer_validator(name="width", value=size)
-        self.__width = size
-        self.__height = size
