@@ -97,7 +97,3 @@ class TestRectangle(unittest.TestCase):
             r = Rectangle(10, 2)
             r.y = -10
         self.assertEqual(cm.exception.__str__(), "y must be >= 0")
-
-        self.assertEqual(Rectangle(3, 2).area(), 6)
-        self.assertEqual(Rectangle(2, 10).area(), 20)
-        self.assertEqual(Rectangle(8, 7, 0, 0, 12).area(), 56)
