@@ -31,3 +31,59 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(r3.x, 0)
         self.assertEqual(r3.y, 0)
         self.assertEqual(r3.id, 12)
+
+        with self.assertRaises(TypeError) as cm:
+            Rectangle(10, "2")
+        self.assertEqual(cm.exception.__str__(), "height must be an integer")
+
+        with self.assertRaises(TypeError) as cm:
+            Rectangle(10, [1])
+        self.assertEqual(cm.exception.__str__(), "height must be an integer")
+
+        with self.assertRaises(TypeError) as cm:
+            Rectangle("10", 1)
+        self.assertEqual(cm.exception.__str__(), "width must be an integer")
+
+        with self.assertRaises(TypeError) as cm:
+            Rectangle(10, 1, 3.5, 5)
+        self.assertEqual(cm.exception.__str__(), "x must be an integer")
+
+        with self.assertRaises(TypeError) as cm:
+            Rectangle(10, 1, 3, 5.65)
+        self.assertEqual(cm.exception.__str__(), "y must be an integer")
+
+        with self.assertRaises(ValueError) as cm:
+            Rectangle(-10, 1)
+        self.assertEqual(cm.exception.__str__(), "width must be > 0")
+
+        with self.assertRaises(ValueError) as cm:
+            Rectangle(10, -1)
+        self.assertEqual(cm.exception.__str__(), "height must be > 0")
+
+        with self.assertRaises(ValueError) as cm:
+            Rectangle(10, 1, -1, 3)
+        self.assertEqual(cm.exception.__str__(), "x must be >= 0")
+
+        with self.assertRaises(ValueError) as cm:
+            Rectangle(10, 1, 1, -3)
+        self.assertEqual(cm.exception.__str__(), "y must be >= 0")
+
+        with self.assertRaises(ValueError) as cm:
+            r = Rectangle(10, 2)
+            r.width = -10
+        self.assertEqual(cm.exception.__str__(), "width must be > 0")
+
+        with self.assertRaises(ValueError) as cm:
+            r = Rectangle(10, 2)
+            r.height = -10
+        self.assertEqual(cm.exception.__str__(), "height must be > 0")
+
+        with self.assertRaises(ValueError) as cm:
+            r = Rectangle(10, 2)
+            r.x = -10
+        self.assertEqual(cm.exception.__str__(), "x must be >= 0")
+
+        with self.assertRaises(ValueError) as cm:
+            r = Rectangle(10, 2)
+            r.y = -10
+        self.assertEqual(cm.exception.__str__(), "y must be >= 0")
