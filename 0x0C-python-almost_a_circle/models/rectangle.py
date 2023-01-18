@@ -96,3 +96,21 @@ class Rectangle(Base):
         """ Compute the area of the rectangle """
 
         return self.width * self.height
+
+    def __str__(self):
+        """ return string representation of Rectangle """
+
+        if self.__width == 0 or self.__height == 0:
+            return ""
+        __str = ""
+        for i in range(self.__height):
+            for j in range(self.__width):
+                __str = __str + "#"
+            if i != self.__height - 1:
+                __str = __str + "\n"
+        return __str
+
+    def display(self):
+        """ Display the rectabgle """
+
+        print(self)
