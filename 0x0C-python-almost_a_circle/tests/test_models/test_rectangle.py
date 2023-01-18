@@ -101,3 +101,16 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(Rectangle(3, 2).area(), 6)
         self.assertEqual(Rectangle(2, 10).area(), 20)
         self.assertEqual(Rectangle(8, 7, 0, 0, 12).area(), 56)
+
+        self.assertEqual(str(Rectangle(4, 6, 2, 1, 12)),
+                         '[Rectangle] (12) 2/1 - 4/6')
+        self.assertEqual(str(Rectangle(5, 5, 1)),
+                         '[Rectangle] (24) 1/0 - 5/5')
+        self.assertEqual(str(Rectangle(10, 12)),
+                         '[Rectangle] (25) 0/0 - 10/12')
+        self.assertEqual(str(Rectangle(12, 10)),
+                         '[Rectangle] (26) 0/0 - 12/10')
+        self.assertEqual(str(Rectangle(12, 10, 3)),
+                         '[Rectangle] (27) 3/0 - 12/10')
+        self.assertEqual(str(Rectangle(12, 10, 3, 6, 8)),
+                         '[Rectangle] (8) 3/6 - 12/10')
