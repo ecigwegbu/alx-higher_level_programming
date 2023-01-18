@@ -119,10 +119,28 @@ class Rectangle(Base):
         return f"[Rectangle] ({self.id}) {self.__x}\
 /{self.__y} - {self.__width}/{self.__height}"
 
-    def update(self, *args):
+    def update0(self, *args):
         """ assign an argument to each attribute """
 
         attrs = ("id", "width", "height", "x", "y")
         for at, arg in zip(attrs, args):
             self.__setattr__(at, arg)
+        return
+
+    def update(self, *args, **kwargs):
+        """ assign an argument to each attribute """
+
+        attrs = ("id", "width", "height", "x", "y")
+        if args is None or len(args) == 0:
+            # do **kwargs
+            for at, arg in kwargs.items():
+                if at in attrs:
+                    self.__setattr__(at, arg)
+                else:
+                    raise AttributeError(at +
+                                         " does not exist in Rectangle class")
+        else:
+            for at, arg in zip(attrs, args):
+                self.__setattr__(at, arg)
+
         return
