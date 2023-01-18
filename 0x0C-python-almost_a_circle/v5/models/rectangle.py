@@ -104,9 +104,7 @@ class Rectangle(Base):
         if self.__width == 0 or self.__height == 0:
             pass
         else:
-            __str = "\n" * self.__y
             for i in range(self.__height):
-                __str += " " * self.__x
                 for j in range(self.__width):
                     __str = __str + "#"
                 if i != self.__height - 1:
