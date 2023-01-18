@@ -10,6 +10,8 @@ class Rectangle(Base):
     """ The Rectangle class based on base class """
 
     def __init__(self, width, height, x=0, y=0, id=None):
+        """ constructor for Rectangle Class"""
+
         super().__init__(id)
         self.integer_validator(name="width", value=width)
         self.integer_validator(name="height", value=height)
@@ -49,7 +51,7 @@ class Rectangle(Base):
 
     @property
     def x(self):
-        """ x propert getter """
+        """ x property getter """
 
         return self.__x
 
@@ -62,7 +64,7 @@ class Rectangle(Base):
 
     @property
     def y(self):
-        """ y propert getter """
+        """ y property getter """
 
         return self.__y
 
@@ -91,4 +93,6 @@ class Rectangle(Base):
             return
 
     def area(self):
+        """ Compute the area of the rectangle """
+
         return self.width * self.height
