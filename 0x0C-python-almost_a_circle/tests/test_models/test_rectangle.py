@@ -73,6 +73,16 @@ class TestRectangle(unittest.TestCase):
             r.width = -10
         self.assertEqual(cm.exception.__str__(), "width must be > 0")
 
+        with self.assertRaises(TypeError) as cm:
+            r = Rectangle(10, 2)
+            r.width = "3"
+        self.assertEqual(cm.exception.__str__(), "width must be an integer")
+
+        with self.assertRaises(TypeError) as cm:
+            r = Rectangle(10, 2)
+            r.height = "3"
+        self.assertEqual(cm.exception.__str__(), "height must be an integer")
+
         with self.assertRaises(ValueError) as cm:
             r = Rectangle(10, 2)
             r.height = -10
