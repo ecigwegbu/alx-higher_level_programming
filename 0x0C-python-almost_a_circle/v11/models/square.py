@@ -33,21 +33,3 @@ class Square(Rectangle):
         self.width = sz
         self.height = sz
         return
-
-    def update(self, *args, **kwargs):
-        """ assign an argument to each attribute """
-
-        attrs = ("id", "size", "x", "y")
-        if args is None or len(args) == 0:
-            # do **kwargs
-            for at, arg in kwargs.items():
-                if at in attrs:
-                    self.__setattr__(at, arg)
-                else:
-                    raise AttributeError(at +
-                                         " does not exist in Square class")
-        else:
-            for at, arg in zip(attrs, args):
-                self.__setattr__(at, arg)
-
-        return
