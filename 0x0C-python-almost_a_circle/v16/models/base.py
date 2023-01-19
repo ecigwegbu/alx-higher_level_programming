@@ -26,17 +26,17 @@ class Base:
 
         if list_dictionaries is None:
             return "[]"
-        return json.dumps(list_dictionaries, default=Base.default_json)
+        return json.dumps(list_dictionaries)
 
     @classmethod
     def save_to_file(cls, list_objs):
         """ This Class method creates a JSON string and saves it to a file.
         """
 
-        with open(list_objs[0].__class__.__name__ + ".json", "w") as f:
-            f.write(cls.to_json_string(list_objs))
-
-    def default_json(t):
-        """ default function for json dump """
-
-        return f'{t}'
+        if list_objs is None or len(list_objs) == 0:
+            json_str = "[]"
+        else:
+            ls_dicts = [obj.to_dictionary() for obj in list_objs]
+            json_str = cls.to_json_string(ls_dicts)
+        with open(cls.__name__ + ".json", "w") as f:
+            f.write(json_str)
