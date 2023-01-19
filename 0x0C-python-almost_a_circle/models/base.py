@@ -35,4 +35,7 @@ class Base:
 
         ls_dicts = [obj.to_dictionary() for obj in list_objs]
         with open(list_objs[0].__class__.__name__ + ".json", "w") as f:
-            f.write(cls.to_json_string(ls_dicts))
+            if list_objs is None:
+                f.write("[]")
+            else:
+                f.write(cls.to_json_string(ls_dicts))
