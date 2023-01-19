@@ -136,9 +136,3 @@ class Rectangle(Base):
                 self.__setattr__(at, arg)
 
         return
-
-    def to_dictionary(self):
-        """ Return a dictionary representation of Rectangle """
-
-        return {key: self.__getattribute__(key) for key in
-                ["id", "width", "height", "x", "y"]}
