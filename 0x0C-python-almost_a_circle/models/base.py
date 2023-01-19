@@ -26,4 +26,15 @@ class Base:
 
         if list_dictionaries is None:
             return "[]"
-        return json.dumps(list_dictionaries)
+        return json.dumps(list_dictionaries, default=Base.default_json)
+
+    @classmethod
+    def save_to_file(cls, list_objs):
+        """ This Class method creates a JSON string and saves it to a file.
+        """
+
+        with open(list_objs[0].__class__.__name__ + ".json", "w") as f:
+            f.write(cls.to_json_string(list_objs))
+
+    def default_json(t):
+        return f'{t}'
