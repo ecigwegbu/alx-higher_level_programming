@@ -37,4 +37,6 @@ class Base:
             f.write(cls.to_json_string(list_objs))
 
     def default_json(t):
+        """ default function for json dump """
+
         return f'{t}'
