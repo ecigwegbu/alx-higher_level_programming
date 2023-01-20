@@ -132,7 +132,6 @@ class Rectangle(Base):
                     raise AttributeError(at +
                                          " does not exist in Rectangle class")
         else:
-            # do *args
             for at, arg in zip(attrs, args):
                 self.__setattr__(at, arg)
 
