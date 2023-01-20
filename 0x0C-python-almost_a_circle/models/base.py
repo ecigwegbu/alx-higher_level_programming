@@ -1,11 +1,7 @@
 #!/usr/bin/python3
-""" This module implements my models
-It is part of the Almost a circle project
-"""
-
-
 import json
 import models.rectangle
+
 """ This is the Rectangle Class
 
     Classes:
