@@ -5,7 +5,7 @@ It is part of the Almost a circle project
 
 
 import json
-
+import models.rectangle
 
 class Base:
     """ The base class """
