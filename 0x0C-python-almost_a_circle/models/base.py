@@ -56,8 +56,7 @@ class Base:
 
     @classmethod
     def create(cls, **dictionary):
-        """  returns an instance with all attributes already set
-        - based on **kwargs input, a dictionary representing an object  """
+        """  returns an instance with all attributes already set """
 
         dummy = models.rectangle.Rectangle(1, 1)
         dummy.update(**dictionary)
