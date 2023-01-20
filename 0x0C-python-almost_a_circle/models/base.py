@@ -5,11 +5,6 @@ All classes are derived from this.
 """
 
 import json
-"""This is the Rectangle Class
-
-Classes:
-Rectangle
-"""
 
 
 class Base:

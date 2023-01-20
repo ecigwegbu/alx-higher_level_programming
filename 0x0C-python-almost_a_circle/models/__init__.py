@@ -1,8 +1,7 @@
-""" In this package: """
+""" In this package:
 
-Classes :
-Base
-Rectangle
-Square
+Classes:
+    Base
+    Rectangle
+    Square
 """
-
