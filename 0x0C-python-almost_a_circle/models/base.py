@@ -1,4 +1,6 @@
 #!/usr/bin/python3
+""" This module contains the base module class """
+
 import json
 
 """ This is the Rectangle Class
