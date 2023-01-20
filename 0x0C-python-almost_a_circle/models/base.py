@@ -5,15 +5,14 @@ It is part of the Almost a circle project
 
 
 import json
-""" This is json std module"""
-
 import models.rectangle
 """ This is the Rectangle Class
 
-    Classes: 
+    Classes:
 
         Rectangle
 """
+
 
 class Base:
     """ The base class """

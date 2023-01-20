@@ -1,6 +1,9 @@
 #!/usr/bin/python3
 """ This module implements my models
 It is part of the Almost a circle project
+
+    Classes:
+        Rectangle
 """
 
 from models.base import Base
