@@ -4,8 +4,8 @@
 All classes are derived from this.
 """
 
-import json
 import models.rectangle
+import json
 """Define the rectangle classes
 
 Classes:
