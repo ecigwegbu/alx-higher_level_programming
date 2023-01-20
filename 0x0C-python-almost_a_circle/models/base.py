@@ -5,6 +5,7 @@ All classes are derived from this.
 """
 
 import json
+import models.rectangle
 
 
 class Base:
