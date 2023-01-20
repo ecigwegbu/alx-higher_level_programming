@@ -135,7 +135,6 @@ class Rectangle(Base):
             # do *args
             for at, arg in zip(attrs, args):
                 self.__setattr__(at, arg)
-
         return
 
     def to_dictionary(self):

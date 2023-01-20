@@ -59,7 +59,6 @@ class Base:
         """  returns an instance with all attributes already set
         - based on **kwargs input, a dictionary representing an object  """
 
-        # **kwargs: attrs = ("id", "width", "height", "x", "y")
         dummy = models.rectangle.Rectangle(1, 1)
         dummy.update(**dictionary)
         return dummy
