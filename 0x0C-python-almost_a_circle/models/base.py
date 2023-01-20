@@ -1,20 +1,16 @@
 #!/usr/bin/python3
+
 """This module contains the base module class
 
 All classes are derived from this.
 """
 
-#import models.rectangle
 import json
-"""Define the rectangle classes
-
-Classes:
-    Rectangle
-"""
+import models.rectangle
 
 
 class Base:
-    """The base class """
+    """The base class."""
 
     __nb_objects = 0
     """number of objects"""
