@@ -2,6 +2,7 @@
 """ This module contains the base module class """
 
 import json
+import models.rectangle
 
 """ This is the Rectangle Class
 
