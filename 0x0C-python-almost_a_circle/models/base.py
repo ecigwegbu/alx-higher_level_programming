@@ -4,7 +4,7 @@
 All classes are derived from this.
 """
 
-import models.rectangle
+#import models.rectangle
 import json
 """Define the rectangle classes
 
