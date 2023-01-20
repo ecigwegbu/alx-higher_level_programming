@@ -6,7 +6,7 @@ All classes are derived from this.
 """
 
 import json
-#import models.rectangle
+import models.rectangle
 
 
 class Base:
@@ -51,5 +51,17 @@ class Base:
     @classmethod
     def create(cls, **dictionary):
         """  returns an instance with all attributes already set """
-        pass
-        return
+
+        if dictionary is None or dictionary == {}:
+            return None
+        print(cls.__name__)
+
+        if cls.__name__ == "Rectangle":
+            dummy = cls(1, 1)
+        elif cls.__name__ == "Square":
+            dummy = cls(1)
+        else:
+            return None
+
+        dummy.update(**dictionary)
+        return dummy
