@@ -9,7 +9,10 @@ import json
 
 import models.rectangle
 """ This is the Rectangle Class
-    Class : Rectangle
+
+    Classes: 
+
+        Rectangle
 """
 
 class Base:
