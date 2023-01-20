@@ -5,8 +5,6 @@ It is part of the Almost a circle project
 
 
 import json
-import models.rectangle
-""" rectangle contains our Rectangle model"""
 
 
 class Base:
