@@ -6,6 +6,10 @@ All classes are derived from this.
 
 import json
 import models.rectangle
+"""Define the rectangle classes
+Classes:
+    Rectangle
+"""
 
 
 class Base:
