@@ -2,11 +2,12 @@
 """ This module implements my models
 It is part of the Almost a circle project
 
-    Classes:
-        Rectangle
+Classes:
+Rectangle
 """
 
 from models.base import Base
+""" import Base class """
 
 
 class Rectangle(Base):

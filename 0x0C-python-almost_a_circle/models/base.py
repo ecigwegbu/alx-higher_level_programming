@@ -3,12 +3,10 @@
 
 import json
 import models.rectangle
-
 """ This is the Rectangle Class
 
-    Classes:
-
-        Rectangle
+Classes:
+Rectangle
 """
 
 
