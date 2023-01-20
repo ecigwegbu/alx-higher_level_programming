@@ -1,9 +1,12 @@
 #!/usr/bin/python3
-""" This module contains the base module class """
+"""This module contains the base module class
+
+All classes are derived from this.
+"""
 
 import json
 import models.rectangle
-""" This is the Rectangle Class
+"""This is the Rectangle Class
 
 Classes:
 Rectangle
@@ -11,9 +14,10 @@ Rectangle
 
 
 class Base:
-    """ The base class """
+    """The base class """
 
     __nb_objects = 0
+    """number of objects"""
 
     def __init__(self, id=None):
         """Construct a new Base object."""
@@ -25,18 +29,14 @@ class Base:
 
     @staticmethod
     def to_json_string(list_dictionaries):
-        """ returns the JSON string representation of a
-        a list of dictionaries"""
-
+        """returns the JSON string representation of a list of dictionaries"""
         if list_dictionaries is None:
             return "[]"
         return json.dumps(list_dictionaries)
 
     @classmethod
     def save_to_file(cls, list_objs):
-        """ This Class method creates a JSON string and saves it to a file.
-        """
-
+        """This Class method creates a JSON string and saves it to a file."""
         if list_objs is None or len(list_objs) == 0:
             json_str = "[]"
         else:
@@ -48,7 +48,6 @@ class Base:
     @staticmethod
     def from_json_string(json_string):
         """ returns the list of the JSON string representation json_string """
-
         if json_string is None or json_string == "[]":
             return []
         return json.loads(json_string)
@@ -56,6 +55,5 @@ class Base:
     @classmethod
     def create(cls, **dictionary):
         """  returns an instance with all attributes already set """
-
         pass
         return
