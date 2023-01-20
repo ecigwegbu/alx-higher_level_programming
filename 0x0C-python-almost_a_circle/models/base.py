@@ -8,7 +8,9 @@ import json
 """ This is json std module"""
 
 import models.rectangle
-""" This is the Rectangle Class """
+""" This is the Rectangle Class
+    Class : Rectangle
+"""
 
 class Base:
     """ The base class """
