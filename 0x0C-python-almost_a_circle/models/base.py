@@ -5,7 +5,6 @@ All classes are derived from this.
 """
 
 import json
-import models.rectangle
 """This is the Rectangle Class
 
 Classes:
