@@ -53,7 +53,6 @@ class Base:
 
         if dictionary is None or dictionary == {}:
             return None
-        print(cls.__name__)
 
         if cls.__name__ == "Rectangle":
             dummy = cls(1, 1)
