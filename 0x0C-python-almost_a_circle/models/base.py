@@ -70,10 +70,10 @@ class Base:
 
         filename = cls.__name__ + ".json"
 
-        with open(filename, "r") as f:
-            if f is None:
-                return []
-            # read string from file:
-            json_str = f.read()
-            json_dict_l = cls.from_json_string(json_str)
+        try:
+            with open(filename, "r") as f:
+                json_str = f.read()
+                json_dict_l = cls.from_json_string(json_str)
             return [cls.create(**json_dict) for json_dict in json_dict_l]
+        except FileNotFoundError:
+            return []
