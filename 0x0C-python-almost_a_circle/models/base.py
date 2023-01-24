@@ -77,3 +77,36 @@ class Base:
             return [cls.create(**json_dict) for json_dict in json_dict_l]
         except FileNotFoundError:
             return []
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        """serialize a list of objects in csv"""
+        if list_objs is not None and len(list_objs) != 0:
+            if cls.__name__ == 'Rectangle':
+                with open(cls.__name__ + ".csv", "w") as f:
+                    for obj in list_objs:
+                        f.write(f"{obj.id}, {obj.width}, {obj.height}, \n"
+                                f"{obj.x}, {obj.y}\n")
+            elif cls.__name__ == 'Square':
+                with open(cls.__name__ + ".csv", "w") as f:
+                    for obj in list_objs:
+                        f.write(f"{obj.id}, {obj.size}, {obj.x}, {obj.y}\n")
+        return
+
+    @classmethod
+    def load_from_file_csv(cls):
+        """de-serialize a list of objects from csv"""
+        try:
+            with open(cls.__name__ + ".csv", "r") as f:
+                strlst_objs = f.readlines()
+        except FileNotFoundError:
+            return
+        lst_objs = []
+        for strobj in strlst_objs:
+            dummy = cls(1, 1)
+            strobj_mod = strobj[:-1].split(', ')
+            intobj = [int(elt) for elt in strobj_mod]
+            tplobj = tuple(intobj)
+            obj = dummy.update(*tplobj)
+            lst_objs.append(obj)
+        return lst_objs
