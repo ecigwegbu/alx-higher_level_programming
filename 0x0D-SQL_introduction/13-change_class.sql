@@ -1,4 +1,4 @@
 -- Score too low
 
-DELETE second_table
+DELETE IF EXISTS second_table
 	WHERE score <= 5;
