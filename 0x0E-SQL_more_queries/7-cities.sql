@@ -9,8 +9,8 @@ CREATE TABLE IF EXISTS hbtn_0d_usa IF NOT EXISTS hbtn_0d_usa.cities (
 		UNIQUE KEY
 		PRIMARY KEY,
 	state_id INT
-		NOT NULL
-		FOREIGN KEY (state_id) REFERENCES hbtn_0d_usa.states(id),
+		NOT NULL,
+	FOREIGN KEY(state_id) REFERENCES hbtn_0d_usa.states(id),
 	name VARCHAR(256)
 		NOT NULL
 );
