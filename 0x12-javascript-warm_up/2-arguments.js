@@ -3,10 +3,12 @@
 import { argv } from 'node:process';
 
 // console.log(argv.length);
+let myVar;
 if (argv.length === 2) {
-  console.log('No argument');
+  myVar = 'No argument';
 } else if (argv.length === 3) {
-  console.log('Argument found');
+  myVar = 'Argument found';
 } else {
-  console.log('Arguments found');
+  myVar = 'Arguments found';
 }
+console.log(myVar);
