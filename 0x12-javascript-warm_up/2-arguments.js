@@ -2,8 +2,6 @@
 
 import { argv } from 'node:process';
 
-// node script arg2 arg3
-// console.log(argv.length);
 let myVar;
 if (argv[2] == null) {
   myVar = 'No argument';
