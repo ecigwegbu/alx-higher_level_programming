@@ -2,11 +2,12 @@
 
 import { argv } from 'node:process';
 
+// node script arg2 arg3
 // console.log(argv.length);
 let myVar;
-if (argv.length === 2) {
+if (argv[2] == null) {
   myVar = 'No argument';
-} else if (argv.length === 3) {
+} else if (argv[3] == null) {
   myVar = 'Argument found';
 } else {
   myVar = 'Arguments found';
