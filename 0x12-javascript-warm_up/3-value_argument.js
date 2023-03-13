@@ -2,9 +2,4 @@
 
 import { argv } from 'node:process';
 
-const myVar = argv[2];
-if (myVar == null) {
-  console.log('No argument');
-} else {
-  console.log(myVar);
-}
+console.log(argv[2] == null ? 'No argument' : argv[2]);
