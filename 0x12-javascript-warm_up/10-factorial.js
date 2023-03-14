@@ -1,5 +1,5 @@
 #!/usr/bin/node
-// Add 2 integers
+// Compute the Factorial of a number
 
 const a = parseInt(process.argv[2]);
 function factorial (n) {
