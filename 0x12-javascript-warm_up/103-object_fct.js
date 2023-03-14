@@ -5,8 +5,6 @@ const myObject = {
 };
 console.log(myObject);
 // my code below
-// data["PropertyD"] = 4;
-// myObject.incr = '[Function]';
 myObject.incr = function () {
   this.value++;
 };
