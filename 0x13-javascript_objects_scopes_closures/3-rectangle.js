@@ -8,6 +8,7 @@ class Rectangle {
       this.height = h;
     }
   }
+
   print () {
     if (this.width && this.height) {
       let rect = '';
