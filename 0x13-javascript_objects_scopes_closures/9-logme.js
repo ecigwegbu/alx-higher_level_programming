@@ -1,5 +1,9 @@
 #!/usr/bin/node
-// An empty rectangle class
+// logme
 
-class Rectangle {}
-module.exports = Rectangle;
+let numberPrinted = 0;
+
+exports.logMe = function (item) {
+  console.log(`${numberPrinted}: ${item}`);
+  numberPrinted++;
+};
