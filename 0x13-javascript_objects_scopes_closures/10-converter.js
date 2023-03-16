@@ -1,6 +1,9 @@
 #!/usr/bin/node
-// number base converter
+// number to given base converter
 
 exports.converter = function (base) {
-  return parseInt;
+  if (!base) return function () {};
+  return function (num) {
+    return num.toString(base);
+  };
 };
