@@ -1,2 +1,2 @@
 #!/usr/bin/node
-exports.list = [1, 2, 3, 4, 5];
+exports.list = [10, 20, 30, 40, 50];
