@@ -9,7 +9,11 @@
 
 exports.nbOccurences = function (list, searchElement) {
   if (!list || !searchElement) return (0);
-  const count = {};
-  list.forEach(e => count[e] ? count[e]++ : count[e] = 1 );
-  return (count[searchElement]);
+  let num = 0;
+  for (i = 0; i < list.length; i++) {
+    if (list[i] == searchElement) {
+      num++;
+    }
+  }
+  return (num]);
 }
