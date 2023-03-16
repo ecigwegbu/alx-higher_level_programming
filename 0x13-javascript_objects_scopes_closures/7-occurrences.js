@@ -1,5 +1,15 @@
 #!/usr/bin/node
-// An empty rectangle class
+// return number of occurences in a list
 
-class Rectangle {}
-module.exports = Rectangle;
+// const letters = ["a", "b", "c", "a", "b", "c", "a", "b"];
+// const count = {};
+// letters.forEach(e => count[e] ? count[e]++ : count[e] = 1 );
+
+// console.log(count)
+
+exports.nbOccurences = function (list, searchElement) {
+  if (!list || !searchElement) return (0);
+  const count = {};
+  list.forEach(e => count[e] ? count[e]++ : count[e] = 1 );
+  return (count[searchElement]);
+}
