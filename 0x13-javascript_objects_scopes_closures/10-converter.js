@@ -1,5 +1,6 @@
 #!/usr/bin/node
-// An empty rectangle class
+// number base converter
 
-class Rectangle {}
-module.exports = Rectangle;
+exports.converter = function (base) {
+  return parseInt;
+};
