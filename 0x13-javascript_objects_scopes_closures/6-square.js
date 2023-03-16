@@ -10,7 +10,7 @@ class Square extends require('./5-square') {
       if (this.width && this.height) {
         let rect = '';
         for (let i = 0; i < this.width; i++) { // build one line
-          rect += 'C';
+          rect += c;
         }
         for (let j = 0; j < this.height; j++) { // output several lines
           console.log(rect);

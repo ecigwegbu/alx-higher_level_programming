@@ -1,3 +1,4 @@
 *.bak*
 temp
-*bak.js
+*bak*.js
+*.try
