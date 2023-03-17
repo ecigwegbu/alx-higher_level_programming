@@ -1,7 +1,7 @@
 #!/usr/bin/node
 // import an array and computes another new array
 
-const dict = require('./100-dict').dict;
-const newDict = list.map((elt, indx) => indx * elt);
-console.log(list);
-console.log(newList);
+const dict = require('./100-data').dict;
+const newDict = Object.keys(dict).map(key => `${dict[key]}: ${key}`);
+console.log(dict);
+console.log(newDict);
