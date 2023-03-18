@@ -2,11 +2,19 @@
 '''Load a database'''
 
 import MySQLdb
+from sys import argv
 
 if __name__ == "__main__":
+    # print("Args :", argv[0], argv[1], argv[2])
+    if (len(argv) != 4):
+        exit()
 
-    mydb = MySQLdb.connect(host='localhost', user='root',
-                           passwd='password', db='hbtn_0e_0_usa', port=3306)
+    mydb = MySQLdb.connect(host='localhost', user=argv[1],
+                           passwd=argv[2], db=argv[3], port=3306)
     cur = mydb.cursor()
-    numrows = cur.execute("SELECT * FROM states")
-    print("Selected " + str(numrows) + " rows")
+    cur.execute("SELECT * FROM states ORDER BY id ASC")
+
+    # Print results
+    rows = cur.fetchall()
+    for row in rows:
+        print(row)
