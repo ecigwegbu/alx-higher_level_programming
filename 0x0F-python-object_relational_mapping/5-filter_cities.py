@@ -13,7 +13,7 @@ if __name__ == "__main__":
                            passwd=argv[2], db=argv[3], port=3306)
     cur = mydb.cursor()
 
-    if (re.search('^[\\w]*$', argv[4])):  # filter out possible SQL injection
+    if (re.search('^[\\w ]*$', argv[4])):  # filter out possible SQL injection
         cur.execute("SELECT cities.id, cities.name, states.name "
                     "FROM cities JOIN states ON cities.state_id=states.id "
                     "WHERE states.name = '%s' "
