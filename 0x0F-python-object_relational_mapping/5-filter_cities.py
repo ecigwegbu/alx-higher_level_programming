@@ -21,11 +21,12 @@ if __name__ == "__main__":
 
         # Print results
         rows = cur.fetchall()
-        print(rows[0][1], end="")
-        # for i in range(1, 3):
-        for i in range(1, len(rows)):
-            print(', ', rows[i][1], end="")
-        print("")
+        if (rows):
+            print(rows[0][1], end="")
+            # for i in range(1, 3):
+            for i in range(1, len(rows)):
+                print(', ', rows[i][1], end="")
+            print("")
 
         # clean up
         cur.close()
