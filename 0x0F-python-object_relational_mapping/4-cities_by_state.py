@@ -3,24 +3,24 @@
 
 import MySQLdb
 from sys import argv
-import re
+# import re
 
 if __name__ == "__main__":
-    if (len(argv) != 4):
-        exit()
+    # if (len(argv) != 4):
+    #   exit()
 
     mydb = MySQLdb.connect(host='localhost', user=argv[1],
                            passwd=argv[2], db=argv[3], port=3306)
     cur = mydb.cursor()
-    if (re.search('^[\\w ]*$', argv[4])):  # regex matches words and spcs only
-        cur.execute("SELECT * FROM cities ORDER BY id ASC"
-                    % argv[3])
+    cur.execute("SELECT cities.id, cities.name, states.name "
+                "FROM cities JOIN states ON cities.state_id=states.id "
+                "ORDER BY cities.id")
 
-        # Print results
-        rows = cur.fetchall()
-        for row in rows:
-            print(row)
+    # Print results
+    rows = cur.fetchall()
+    for row in rows:
+        print(row)
 
-        # clean up
-        cur.close()
-        mydb.close()
+    # clean up
+    cur.close()
+    mydb.close()
