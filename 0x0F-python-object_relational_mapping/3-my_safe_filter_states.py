@@ -8,10 +8,11 @@ import re
 
 def addSlashes(string):
     ''' add escape slashes to special characters in a string'''
-    if (re.search("^[\w ]*$", string)): #regex matches words and spaces only
+    if (re.search('^[\\w ]*$', string)):  # regex matches words and spaces only
         return string
     else:
         return ""
+
 
 if __name__ == "__main__":
     # print("Args :", argv[0], argv[1], argv[2])
