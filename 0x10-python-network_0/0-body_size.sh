@@ -1,4 +1,8 @@
-#!/usr/bin/bash
-# 0. cURL body size
+#!/bin/bash
+# This bash script takes in a URL, sends a request to that URL,
+# and displays the size of the body of the response
 
-curl -w size_download "$1"
+# $1 - first argument
+echo "$1"
+curl "$1" -o testFile 2> /dev/null
+wc testFile -c | cut -f1 -d' '
