@@ -8,7 +8,8 @@ import sys
 
 if __name__ == "__main__":
     url = sys.argv[1]
-    data = {"email": "igwegbu@gmail.com"}
+    email = sys.argv[2]
+    data = {"email": email}
     data_url_encoded = urllib.parse.urlencode(data)
     data_url_encoded = urllib.parse.urlencode(data)
     data_byte_encoded = data_url_encoded.encode("utf-8")
