@@ -11,7 +11,6 @@ if __name__ == "__main__":
     email = sys.argv[2]
     data = {"email": email}
     data_url_encoded = urllib.parse.urlencode(data)
-    data_url_encoded = urllib.parse.urlencode(data)
     data_byte_encoded = data_url_encoded.encode("utf-8")
     # urlopen is a function that takes a request object as parameter
     # or takes url and other parameters
