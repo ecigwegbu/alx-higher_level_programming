@@ -4,10 +4,11 @@
 
 import urllib.request
 
-req = urllib.request.Request('https://alx-intranet.hbtn.io/status')
-with urllib.request.urlopen(req) as response:
-    mydict = response.info().items()
+if __name__ == "__main__":
+    req = urllib.request.Request('https://alx-intranet.hbtn.io/status')
+    with urllib.request.urlopen(req) as response:
+        mydict = response.info().items()
 
-print("Body response:")
-for elt in mydict:
-    print(f"\t- {elt[0]}: {elt[1]}")
+    print("Body response:")
+    for elt in mydict:
+        print(f"\t- {elt[0]}: {elt[1]}")
