@@ -12,5 +12,6 @@ if __name__ == "__main__":
     params = {"Accept": "application/vnd.github+json",
               "X-GitHub-Api-Version": "2022-11-28"}
     response = requests.get(url, params=params)
-    for commit in response.json()[:10]:
-        print(f"{commit['sha']}: {commit['author']['login']}")
+    if len(response.json()) != 0:
+        for commit in response.json()[:10]:
+            print(f"{commit['sha']}: {commit['author']['login']}")
