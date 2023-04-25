@@ -1,0 +1,4 @@
+2023-04-25 15:49:45.803 [info] Started initializing default profile extensions in extensions installation folder. file:///root/.vscode/extensions
+2023-04-25 15:49:46.822 [warning] Failed to create default profile extensions manifest in extensions installation folder. file:///root/.vscode/extensions Unable to create file 'vscode-userdata:/root/.vscode/extensions/extensions.json' that already exists when overwrite flag is not set
+2023-04-25 15:49:46.823 [info] Completed initializing default profile extensions in extensions installation folder. file:///root/.vscode/extensions
+2023-04-25 15:49:50.710 [warning] No ptyHost heartbeat after 6 seconds
