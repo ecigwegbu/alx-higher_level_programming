@@ -1,5 +1,5 @@
 #!/usr/bin/node
-// display title of a movie based on API
+// prints the number of movies where the character “Wedge Antilles” is present
 
 const request = require('request');
 const url = process.argv[2];

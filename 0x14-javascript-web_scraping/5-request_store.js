@@ -1,5 +1,5 @@
 #!/usr/bin/node
-// safe a string to a file
+// gets the contents of a webpage and stores it in a file
 
 const fs = require('fs');
 const request = require('request');
