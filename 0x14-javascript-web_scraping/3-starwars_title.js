@@ -6,6 +6,5 @@ const id = parseInt(process.argv[2]);
 const url = 'https://swapi-api.alx-tools.com/api/films/';
 request(url, function (body, response) {
   const films = JSON.parse(response.body).results;
-  const count = JSON.parse(response.body).count;
   console.log(films[id - 1].title);
 });
